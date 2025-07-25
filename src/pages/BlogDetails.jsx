@@ -24,31 +24,31 @@ const BlogDetails = () => {
   }, [id]);
 
   return (
-    <div className="h-[91.6vh] bg-gray-50 py-20 my-5 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 px-4 py-10">
+      <div className="max-w-7xl mx-auto">
         {blog ? (
           <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white p-6 rounded-2xl shadow-xl">
-              {/* Left - Image */}
-              <div>
+            <div className="bg-white shadow-2xl rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 lg:p-10">
+              <div className="w-full h-80 sm:h-96 lg:h-full">
                 <img
                   src={blog.imgUrl}
                   alt={blog.title}
-                  className="w-full h-80 md:h-full object-cover rounded-xl"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </div>
 
-              {/* Right - Details */}
               <div className="flex flex-col justify-between">
                 <div>
-                  <h1 className="text-4xl font-bold text-blue-700 mb-4">{blog.title}</h1>
-                  <p className="text-gray-700 text-base leading-relaxed mb-6">
+                  <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 leading-tight mb-6">
+                    {blog.title}
+                  </h1>
+                  <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                     {blog.description}
                   </p>
                 </div>
 
-                <div className="space-y-4 mt-4">
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                <div className="mt-8 space-y-4">
+                  <div className="flex items-center gap-2 text-gray-600 text-sm">
                     <FiCalendar className="text-green-600" />
                     <span>
                       {new Date(blog.createdAt).toLocaleDateString('en-GB', {
@@ -61,20 +61,20 @@ const BlogDetails = () => {
 
                   <UserDetail user={blog.user} />
 
-                  <div className="text-sm text-gray-500">
-                    <span className="font-semibold">Category:</span> {blog.catagory}
+                  <div className="text-sm text-gray-600">
+                    <span className="font-semibold">Category:</span>{' '}
+                    <span className="text-orange-600">{blog.catagory}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Catagory component at the bottom */}
-            <div className="mt-12">
+            <div className="mt-16">
               <Catagory catagory={blog.catagory} />
             </div>
           </>
         ) : (
-          <p className="text-center text-lg text-gray-500">Loading blog...</p>
+          <div className="text-center text-xl text-gray-500 py-24">Loading blog...</div>
         )}
       </div>
     </div>
