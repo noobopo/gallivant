@@ -1,0 +1,7 @@
+@import "tailwindcss";
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+button{
+    cursor: pointer;
+}
