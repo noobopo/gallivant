@@ -98,12 +98,12 @@ const Navbar = () => {
           {!auth.isAuthanticated ? (
             <>
               <Link to="/login">
-                <button className="py-2 px-20 w-full rounded bg-cyan-500 text-white hover:bg-white hover:text-black transition-all duration-500">
+                <button onClick={toggleSidebar} className="py-2 px-20 w-full rounded bg-cyan-500 text-white hover:bg-white hover:text-black transition-all duration-500">
                   Login
                 </button>
               </Link>
               <Link to="/register">
-                <button className="py-2 px-20 rounded w-full bg-gray-900 border text-white hover:bg-white hover:text-black transition-all duration-500">
+                <button onClick={toggleSidebar} className="py-2 px-20 rounded w-full bg-gray-900 border text-white hover:bg-white hover:text-black transition-all duration-500">
                   Register
                 </button>
               </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
           ) : (
             <div className="w-full flex justify-center">
               <Link to="/profile">
-                <button className="border-2 border-black p-1.5 rounded-full hover:scale-110 transition-all duration-500">
+                <button onClick={toggleSidebar} className="border-2 border-black p-1.5 rounded-full hover:scale-110 transition-all duration-500">
                   <CiUser size={27} color="blue" />
                 </button>
               </Link>

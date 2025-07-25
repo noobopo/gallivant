@@ -7,7 +7,6 @@ import context from '../context/AppContext';
 const Addblog = () => {
   const auth = useContext(context);
   const navigate = useNavigate();
-
   const [title, setTitle] = useState('');
   const [catagory, setCatagory] = useState('');
   const [imgUrl, setImgUrl] = useState('');
@@ -73,7 +72,7 @@ const Addblog = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="h-[91.6vh] bg-gray-50 flex items-center justify-center px-4 py-10 overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center px-4 py-10">
         <div className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-xl">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
             {auth.id ? 'Update Blog' : 'Create New Blog'}
